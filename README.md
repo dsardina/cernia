@@ -24,7 +24,7 @@ predict whether they crosstalk through known, validated miRNA-target interaction
 
 
 ################################
-   Usage
+   **Usage**
 ################################
 
 The software is written in R and require some packages (see section 'Dependencies') to be run.
@@ -41,7 +41,7 @@ ceR1	ceR2	Score	Crosstalk (Yes/No)
 
 
 ################################
-   Dependencies
+   **Dependencies**
 ################################
 
 CERNIA require the following libraries installed in R:
@@ -50,7 +50,7 @@ CERNIA require the following libraries installed in R:
  
 
 ################################
-   Contacts
+   **Contacts**
 ################################
 
 For any help, or doubts, please contact: rosalba.giugno@univr.it
