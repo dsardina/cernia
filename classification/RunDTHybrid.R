@@ -1,4 +1,4 @@
-options(stringsAsFactors = FALSE)
+
 source("classification/DTHybrid/Recommendation.R")
 
 load("data/interactions.RData")
@@ -29,12 +29,29 @@ launch.DTHybrid <- function(tissue.type){
   else{
     if(!exists("interactions")) stop("Cannot load miRNA-target interactions from data directory.")
     
+    tar <- NULL
+    if(tissue.type == "BRCA"){
+      load("data/dty/brca.genes.RData")
+      tar <- brca.genes
+    }
+    else if(tissue.type == "PRAD"){
+      load("data/dty/prad.genes.RData")
+      tar <- prad.genes
+    }
+    else if(tissue.type == "GBM"){
+      load("data/dty/gbm.genes.RData")
+      tar <- gbm.genes
+    }
+    else {
+      cat("Tissue type not valid. Set default type: BRCA")
+      load("data/dty/brca.genes.RData")
+      tar <- brca.genes
+    }
+    
     # Extract miRs and their targets
     mir <- unique(interactions[,1])
-    tar <- unique(interactions[,2])
     
     # Create the matrix of the interactions
-    
     cat("Creating matrix from interactions...\n")
     A <- matrix(nrow = length(tar), ncol = length(mir), data = 0)
     colnames(A) <- mir
