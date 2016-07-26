@@ -35,6 +35,9 @@ of validated pairs, the MREs and the DT-Hybrid's recommendations, the tissue-spe
 gene expression and compute the vector of scores. Then, it's performed the classification
 of all possible pairs using the 10 batches of 100 svms each, already trained.
 
+CERNIA needs also further data: SVMs for classification, tissue-specific gene expressions and
+validated ceRNA pairs, etc. They can be download from: http://alpha.dmi.unict.it/cernia/data.
+
 The output produces a file that contain the scored pairs that have four tab-separated fields:
 
 ceR1	ceR2	Score	Crosstalk (Yes/No)
